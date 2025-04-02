@@ -1,50 +1,67 @@
 ﻿@model JokeWebApplication.Models.JokeResponse
 
 @{
-    ViewData["Title"] = "Auto-generated joke";
+	ViewData["Title"] = "Auto-generated joke";
 }
 <div style="width: 100px; height: 300px;"></div>
 <div class="joke-container">
-    <h1>@ViewData["Title"]</h1>
+	<h1>@ViewData["Title"]</h1>
 
-    @if (Model.Error)
-    {
-        <div class="error-message">
-            <strong>Error:</strong> An error occurred while fetching the joke.
-        </div>
-    }
-    else
-    {
-        <div class="joke-info">
-            <h2>Category: @Model.Category</h2>
-         
-
-            @if (Model.Type == "single")
-            {
-                <div class="single-joke">
-                    <h4>Joke:</h4>
-                    <p>@Model.joke</p>
-                </div>
-            }
-            else if (Model.Type == "twopart")
-            {
-                <div class="twopart-joke">
-                    <h4>Setup:</h4>
-                    <p>@Model.Setup</p>
-                    <h4>Punchline:</h4>
-                    <p>@Model.Delivery</p>
-                </div>
-            }
-        </div>
-    }
+	@if (Model.Error)
+	{
+		<div class="error-message">
+			<strong>Error:</strong> An error occurred while fetching the joke.
+		</div>
+	}
+	else
+	{
+		<div id="joke-info" class="joke-info fadeIn">
+			<h2>Category: @Model.Category</h2>
 
 
-    <div class="buttons-container">
-        <!-- Back Button -->
-        <a href="@Url.Action("Index", "Home")" class="button">Back</a>
+			@if (Model.Type == "single")
+			{
+				<div class="single-joke">
+					<h4>Joke:</h4>
+					<p>@Model.joke</p>
+				</div>
+			}
+			else if (Model.Type == "twopart")
+			{
+				<div class="twopart-joke">
+					<h4>Setup:</h4>
+					<p>@Model.Setup</p>
+					<h4>Punchline:</h4>
+					<p>@Model.Delivery</p>
+				</div>
+			}
+		</div>
+	}
 
-        <!-- Generate New Joke Button -->
-        <a href="@Url.Action("DisplayJoke", "Home")" class="button">Generate New Joke</a>
-    </div>
+
+	<div class="buttons-container">
+		<!-- Back Button -->
+		<a href="@Url.Action("Index", "Home")" class="button">Back</a>
+
+		<!-- Generate New Joke Button -->
+		<a href="@Url.Action("DisplayJoke", "Home")" id="new-joke" class="button">Generate New Joke</a>
+	</div>
 </div>
 
+
+ <script>
+		const button = document.getElementById("new-joke");
+
+		button.addEventListener("click", function (event) {
+		event.preventDefault(); // Blockerar redirect
+
+
+		const elementToAnimate = document.getElementById("joke-info");
+		elementToAnimate.classList.add("fadeOut"); //Triggar animationen
+
+		//Animerar klart, sen laddar sidan om
+		elementToAnimate.addEventListener("animationend", function () {
+			window.location.reload();
+		});
+	});
+ </script>
