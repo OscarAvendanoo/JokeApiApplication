@@ -1,0 +1,105 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+.joke-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.joke-info {
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.single-joke,
+.twopart-joke {
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2e8b57;
+}
+
+h3 {
+    color: #6a6a6a;
+}
+
+h4 {
+    color: #2d8b8b;
+}
+
+p {
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.6;
+}
+
+.error-message {
+    background-color: #ffdddd;
+    color: #b72d2d;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.joke-footer {
+    margin-top: 30px;
+    font-size: 1.1em;
+    font-style: italic;
+    color: #888;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center; /* Align buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #007bff; /* Blue color */
+    color: white;
+    padding: 12px 20px; /* Same size for both buttons */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 250px; /* Ensure buttons are the same size */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+    .button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }

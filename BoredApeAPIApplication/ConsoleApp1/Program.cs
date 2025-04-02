@@ -9,13 +9,13 @@ namespace ConsoleApp1
         {
             using HttpClient client = new HttpClient();
             string url1 = "https://v2.jokeapi.dev/joke/Programming"; // Example for programming jokes
-            string url2 = "https://v2.jokeapi.dev/joke/Dark"; // Example for programming jokes
+            string url2 = "https://v2.jokeapi.dev/joke/Misc"; // Example for programming jokes
             string url3 = "https://v2.jokeapi.dev/joke/Pun"; // Example for programming jokes
             string url4 = "https://v2.jokeapi.dev/joke/Spooky"; // Example for programming jokes
             string url5 = "https://v2.jokeapi.dev/joke/Christmas"; // Example for programming jokes
 
             await GenerateJoke(url1, client,"Programming");
-            await GenerateJoke(url2, client,"Dark");
+            await GenerateJoke(url2, client,"Misc");
             await GenerateJoke(url3, client,"Pun");
             await GenerateJoke(url4, client,"Spooky");
             await GenerateJoke(url5, client,"Christmas");
