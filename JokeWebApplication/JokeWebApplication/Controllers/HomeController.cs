@@ -20,7 +20,7 @@ namespace JokeWebApplication.Controllers
            
             return View();
         }
-        public async Task<IActionResult> DisplayJoke()
+        public async Task<IActionResult> DisplayJoke(bool NSFW = false)
         {
             using HttpClient client = new HttpClient();
       
@@ -47,8 +47,16 @@ namespace JokeWebApplication.Controllers
             {
                 PropertyNameCaseInsensitive = true
             });
+			if (jokeData.Safe)
+			{
+				return View(jokeData);
+			}
+			else
+			{
+				return RedirectToAction("DisplayJoke");
+			}
 
-            return View(jokeData);
+			return View(jokeData);
             
             
         }

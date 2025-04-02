@@ -3,12 +3,19 @@
 }
 
 <div class="text-center">
-   
     <div style="width: 100px; height: 300px;"></div>
-    <!-- Add the large button here -->
+
+    <!-- Joke Generation Form -->
     <form action="@Url.Action("DisplayJoke", "Home")" method="get">
+        <!-- Submit Button -->
         <button type="submit" class="btn btn-lg btn-primary" style="padding: 20px 40px; font-size: 24px; margin-top: 30px;">
             Generate Random Joke
         </button>
+
+        <!-- NSFW Checkbox (Centered & Enlarged) -->
+        <div class="d-flex justify-content-center align-items-center mt-4">
+            <input type="checkbox" id="nsfwCheckbox" name="includeNSFW" value="true" style="width: 30px; height: 30px; margin-right: 10px;">
+            <label for="nsfwCheckbox" style="font-size: 1.5rem;">Include NSFW jokes</label>
+        </div>
     </form>
 </div>
