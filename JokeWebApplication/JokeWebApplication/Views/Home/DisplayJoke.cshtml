@@ -3,7 +3,6 @@
 @{
 	ViewData["Title"] = "Auto-generated joke";
 }
-<div style="width: 100px; height: 300px;"></div>
 <div class="joke-container">
 	<h1>@ViewData["Title"]</h1>
 
@@ -17,7 +16,6 @@
 	{
 		<div id="joke-info" class="joke-info fadeIn">
 			<h2>Category: @Model.Category</h2>
-
 
 			@if (Model.Type == "single")
 			{
@@ -37,8 +35,6 @@
 			}
 		</div>
 	}
-	
-
 
 	<div class="buttons-container">
 		<!-- Back Button -->
